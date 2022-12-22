@@ -1,3 +1,27 @@
+var password = document.getElementByID("password");
+
+function genPassword(){
+    var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var passwordLength = 12;
+    var password ="";
+
+    for (var i = 0; i<= passwordLength; i++){
+        var randomNumber = Math.floor(Math.random() * chars.length);
+        password += chars.substring(randomNumber, randomNumber +1);
+    }
+    // Now apply it!
+    document.getElementById("password").value = password;
+}
+
+//This wil activate the copy button
+
+function copyPassword(){
+    var copyText = document.getElementById("password");
+    copyText.select();
+    copyText.setSelectionRange(0,999);
+    document.copyText("copy");
+}
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
